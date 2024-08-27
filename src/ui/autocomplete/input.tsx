@@ -1,5 +1,5 @@
 import { useAutocomplete } from "./context.ts";
-import { ChangeEvent } from "react";
+import { ChangeEvent, type ReactNode } from "react";
 
 export function Input() {
   const {
@@ -33,5 +33,15 @@ export function Input() {
       className="border p-2 w-full rounded-md"
       placeholder="Start typing..."
     />
+  );
+}
+
+export function Label({ children }: { children: ReactNode }) {
+  const { inputId } = useAutocomplete();
+
+  return (
+    <label htmlFor={inputId} className="block mb-1 text-sm font-medium">
+      {children}
+    </label>
   );
 }

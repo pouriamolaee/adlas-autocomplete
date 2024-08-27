@@ -9,6 +9,7 @@ type AutocompleteContextType = {
   filteredOptions: string[];
   setFilteredOptions: (filteredOptions: string[]) => void;
   onChange: (value: string) => void;
+  inputId: string;
 };
 
 export const AutocompleteContext = createContext<AutocompleteContextType>({
@@ -20,6 +21,7 @@ export const AutocompleteContext = createContext<AutocompleteContextType>({
   filteredOptions: [],
   setFilteredOptions: () => {},
   onChange: () => {},
+  inputId: "",
 });
 
 export function useAutocomplete() {
